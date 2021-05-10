@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InclusaoActivity"
+    android:orientation="vertical">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editTextNome"
+        android:hint="Nome do contato"
+        android:inputType="textPersonName"
+        android:layout_marginBottom="5dp"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editTextEmail"
+        android:hint="Email do contato"
+        android:inputType="textEmailAddress"
+        android:layout_marginBottom="5dp"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editTextTelefone"
+        android:hint="Telefone do contato"
+        android:inputType="phone"
+        android:layout_marginBottom="5dp"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonConfirmarInclusao"
+        android:text="Incluir"
+        />
+
+</LinearLayout>
