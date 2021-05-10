@@ -1,0 +1,24 @@
+﻿@model QuintaApp.Models.Usuario
+@{
+    ViewBag.Title = "Resultado";
+}
+
+<h2>Resultado</h2>
+
+<div class="editor-label">@Html.DisplayNameFor(m => m.UsuID)</div>
+<div class="editor-field">@Html.DisplayFor(m => m.UsuID)</div>
+
+<div class="editor-label">@Html.DisplayNameFor(m => m.UsuNome)</div>
+<div class="editor-field">@Html.DisplayFor(m => m.UsuNome)</div>
+
+<div class="editor-label">@Html.DisplayNameFor(m => m.UsuObs)</div>
+<div class="editor-field">@Html.DisplayFor(m => m.UsuObs)</div>
+
+<div class="editor-label">@Html.DisplayNameFor(m => m.UsuNas)</div>
+<div class="editor-field">@Html.DisplayFor(m => m.UsuNas)</div>
+
+<div class="editor-label">@Html.DisplayNameFor(m => m.Email)</div>
+<div class="editor-field">@Html.DisplayFor(m => m.Email)</div>
+
+@Html.ActionLink("Voltar", "Index", "Home")
+
