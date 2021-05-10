@@ -1,0 +1,26 @@
+﻿@model IEnumerable<AppRoute66.Models.Noticia>
+@{
+    ViewBag.Title = "Noticias";
+}
+
+<h2>Noticias</h2>
+
+<div>
+    <ul>
+        @foreach(var item in Model) 
+        {
+        <li>
+            @Html.ActionLink(item.Titulo, "MostrarNoticia", "Home", new
+       {
+           @NoticiaId = item.NoticiaId,
+           @Categoria = item.Categoria.ToLower(),
+           @Titulo = item.Titulo.ToLower()
+       }, null)
+
+            <em>@Html.DisplayFor(x => item.Categoria)</em>
+            <b>@Html.DisplayFor(x => item.Data)</b>
+        </li>
+        }
+    </ul>
+</div>
+

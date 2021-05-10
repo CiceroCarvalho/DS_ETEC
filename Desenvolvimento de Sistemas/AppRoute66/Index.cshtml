@@ -1,0 +1,43 @@
+﻿@model IEnumerable<AppRoute66.Models.Noticia>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<h2>Rotas</h2>
+
+<div>
+    <ul>
+        @foreach (string item in ViewBag.Categoria)
+        {
+            <li>
+                @Html.ActionLink(item, "MostraCategoria", "Home", new { @Categoria = item }, null)
+            </li>
+        }
+    </ul>
+</div>
+
+<div>
+    <ul>
+        @foreach (var item in Model)
+        {
+            <li>
+                @Html.ActionLink(item.Titulo, "MostrarNoticia", "Home", new
+           {
+               @Categoria = item.Categoria.ToLower(),
+               @NoticiaId = item.NoticiaId,
+               @Titulo = item.Titulo.ToLower()
+           }, null)
+                -
+                <em>@Html.DisplayFor(modelItem => item.Categoria)</em>
+                -
+                <b>@Html.DisplayFor(modelItem => item.Data) </b>
+            </li>
+        }
+    </ul>
+</div>
+
+<div>
+    @Html.ActionLink("Todas as Notícias", "Noticias", "Home")
+</div>
+
+@Scripts.Render("~/bundles/todos/escola")
