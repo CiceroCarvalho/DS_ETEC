@@ -1,1 +1,0 @@
-Referente ao AppBanco
