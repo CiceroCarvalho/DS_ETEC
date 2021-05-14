@@ -40,10 +40,46 @@ namespace AppBancoDAO
             db.ExecutaComando(strquery);
         }
 
+        public Usuario SelectId(int Id)
+        {
+            string strString = string.Format("Select * from tbUSUARIO where IdUsu = {0}", Id);
+            var retorno = db.RetornaComando(strString);
+
+            Usuario usuario = new Usuario();
+            retorno.Read();
+            usuario.IdUsu = int.Parse(retorno["IdUsu"].ToString());
+            usuario.NomeUsu = retorno["NomeUsu"].ToString();
+            usuario.Cargo = retorno["Cargo"].ToString();
+            usuario.DataNasc = DateTime.Parse(retorno["DataNasc"].ToString());
+
+            retorno.Close();
+            return (usuario);
+        }
+
         public MySqlDataReader Select() 
         {
             string strquery = "select * from tbUsuario;";
             return db.RetornaComando(strquery);
+        }
+
+        public List<Usuario> ListaUsuarios() 
+        {
+            var usuarios = new List<Usuario>();
+            var retorno = Select();
+
+            while (retorno.Read()) 
+            {
+                var tempUsuario = new Usuario()
+                {
+                    IdUsu = int.Parse(retorno["IdUsu"].ToString()),
+                    NomeUsu = retorno["NomeUsu"].ToString(),
+                    Cargo = retorno["Cargo"].ToString(),
+                    DataNasc = DateTime.Parse(retorno["DataNasc"].ToString())
+                };
+                usuarios.Add(tempUsuario);
+            }
+            retorno.Close();
+            return usuarios;
         }
 
     }

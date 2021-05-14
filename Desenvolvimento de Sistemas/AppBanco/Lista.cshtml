@@ -1,0 +1,51 @@
+﻿@model IEnumerable<AppBancoDominio.Usuario>
+
+@{
+    ViewBag.Title = "Lista";
+}
+
+<h4>Lista de Usuário</h4>
+
+<p>
+    @Html.ActionLink("Novo", "Create","Home")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IdUsu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NomeUsu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cargo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataNasc)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdUsu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NomeUsu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cargo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataNasc)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Detalhes", "ListaId", new {id=item.IdUsu}) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

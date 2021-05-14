@@ -1,0 +1,50 @@
+﻿@model AppBancoDominio.Usuario
+
+@{
+    ViewBag.Title = "ListaId";
+}
+
+<h2>ListaId</h2>
+
+<div>
+    <h4>Usuario</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IdUsu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdUsu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeUsu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomeUsu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cargo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cargo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataNasc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataNasc)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
